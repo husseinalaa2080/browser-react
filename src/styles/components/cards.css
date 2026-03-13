@@ -1,0 +1,137 @@
+/* ----------------------------------
+Card Styles
+Brand card, state cards, detail cards
+---------------------------------- */
+/* Brand and shell */
+.shell-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.shell-brand__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #1f2c3c;
+  color: #ffd75b;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.shell-brand__title,
+.shell-brand__copy {
+  margin: 0;
+}
+
+.shell-brand__title {
+  font-weight: 700;
+}
+
+.shell-brand__copy {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* Generic cards */
+.state-card {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: min(100%, 420px);
+  margin: 48px auto;
+  padding: 28px;
+  border-radius: 28px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--stroke-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.state-card--error {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 241, 242, 0.96));
+}
+
+.state-card__title,
+.state-card__copy {
+  margin: 0;
+}
+
+.state-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.state-card__copy {
+  color: var(--text-muted);
+}
+
+.state-card__spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid rgba(24, 36, 50, 0.12);
+  border-top-color: #1f2c3c;
+  border-radius: 50%;
+  animation: spin 900ms linear infinite;
+}
+
+/* Detail cards */
+.detail-image-card,
+.detail-card {
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(52, 87, 123, 0.08);
+  box-shadow: var(--shadow-card);
+}
+
+.detail-card {
+  padding: 28px;
+}
+
+.detail-card__title,
+.detail-card__subtitle,
+.detail-types__label {
+  margin: 0;
+}
+
+.detail-card__title {
+  font-size: clamp(2rem, 2.8vw, 3rem);
+}
+
+.detail-card__subtitle {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.stat-card {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(249, 251, 255, 0.92);
+  border: 1px solid var(--stroke-soft);
+}
+
+.stat-card__label,
+.stat-card__value {
+  margin: 0;
+}
+
+.stat-card__label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.stat-card__value {
+  margin-top: 6px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Motion */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

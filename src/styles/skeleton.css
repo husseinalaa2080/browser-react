@@ -1,0 +1,37 @@
+/* ----------------------------------
+Skeleton Styles
+Loading placeholders and shimmer
+---------------------------------- */
+/* Skeleton loaders */
+.pokemon-card--skeleton {
+  pointer-events: none;
+}
+
+.pokemon-card__media--skeleton {
+  background: linear-gradient(90deg, #edf2fa 0%, #f9fbff 50%, #edf2fa 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.skeleton-line {
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #edf2fa 0%, #f9fbff 50%, #edf2fa 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.skeleton-line--title {
+  width: 72%;
+}
+
+.skeleton-line--copy {
+  width: 38%;
+}
+
+/* Skeleton motion */
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}

@@ -1,0 +1,69 @@
+/* ----------------------------------
+Pagination Styles
+Pagination layout and navigation
+---------------------------------- */
+/* Pagination layout */
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.pagination-bar__pages {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.load-more-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+}
+
+/* Pagination controls */
+.pagination-chip {
+  min-width: 42px;
+  height: 42px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--text-muted);
+  transition:
+    transform var(--motion-fast),
+    background var(--motion-fast),
+    color var(--motion-fast);
+}
+
+.pagination-chip:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.pagination-chip--active {
+  background: #1f2c3c;
+  color: #ffffff;
+}
+
+.pagination-chip:disabled {
+  opacity: 0.56;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .pagination-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pagination-bar__pages {
+    width: 100%;
+  }
+
+  .pagination-chip {
+    width: 100%;
+  }
+}
