@@ -6,6 +6,7 @@ import { getPokemonArtworkUrl } from '@/features/pokemon/utils/getPokemonArtwork
 import { getPokemonIdFromResource } from '@/features/pokemon/utils/getPokemonIdFromResource';
 
 export const mapPokemonCard = (item: PokemonListItemApiResponse): PokemonCardModel => {
+  // map API shapes for UI
   const pokemonId = getPokemonIdFromResource(item.url);
 
   if (!pokemonId) {

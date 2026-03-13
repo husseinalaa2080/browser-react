@@ -3,6 +3,7 @@ import type { PokemonBatchModel } from '@/features/pokemon/types/pokemon';
 import { mapPokemonCard } from '@/features/pokemon/mappers/mapPokemonCard';
 import { getOffsetFromNextUrl } from '@/features/pokemon/utils/getOffsetFromNextUrl';
 
+// map API shapes for UI
 export const mapPokemonBatchResponse = (response: PokemonListApiResponse): PokemonBatchModel => ({
   items: response.results.map(mapPokemonCard),
   nextOffset: getOffsetFromNextUrl(response.next),

@@ -2,6 +2,7 @@ import type { PokemonListApiResponse } from '@/features/pokemon/api/pokemonSchem
 import type { PokemonPageModel } from '@/features/pokemon/types/pokemon';
 import { mapPokemonCard } from '@/features/pokemon/mappers/mapPokemonCard';
 
+// map API shapes for UI
 export const mapPokemonListResponse = (
   response: PokemonListApiResponse,
   page: number,

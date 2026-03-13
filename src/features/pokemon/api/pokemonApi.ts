@@ -5,6 +5,7 @@ import { mapPokemonListResponse } from '@/features/pokemon/mappers/mapPokemonLis
 import { getOffsetFromPage } from '@/features/pokemon/utils/getOffsetFromPage';
 import { getJson } from '@/utils/http/getJson';
 
+// API layer
 const apiBaseUrl = 'https://pokeapi.co/api/v2';
 
 const buildListUrl = (limit: number, offset: number) => {
@@ -17,6 +18,7 @@ const buildListUrl = (limit: number, offset: number) => {
 const buildDetailUrl = (pokemonId: number) => new URL(`/api/v2/pokemon/${pokemonId}`, apiBaseUrl);
 
 export const fetchPokemonPage = async (page: number, pageSize: number) => {
+  // keep API shapes out of UI
   const response = await getJson(buildListUrl(pageSize, getOffsetFromPage(page, pageSize)), pokemonListSchema);
   return mapPokemonListResponse(response, page, pageSize);
 };

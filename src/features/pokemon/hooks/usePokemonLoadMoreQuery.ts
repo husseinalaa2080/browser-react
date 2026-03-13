@@ -4,14 +4,16 @@ import { fetchPokemonBatch } from '@/features/pokemon/api/pokemonApi';
 import { POKEMON_PAGE_SIZE } from '@/features/pokemon/constants';
 import { mergePokemonCards } from '@/features/pokemon/utils/mergePokemonCards';
 
+// cache server state outside UI
 export const usePokemonLoadMoreQuery = () => {
   const query = useInfiniteQuery({
     initialPageParam: 0,
-    queryKey: ['pokemon', 'load-more'],
+    queryKey: ['pokemon-load-more'],
     queryFn: ({ pageParam }) => fetchPokemonBatch(pageParam, POKEMON_PAGE_SIZE),
     getNextPageParam: (lastPage) => lastPage.nextOffset ?? undefined,
   });
 
+  // one grid across batches
   const items = mergePokemonCards(query.data?.pages.map((page) => page.items) ?? []);
   const totalItems = query.data?.pages[0]?.totalItems ?? 0;
 

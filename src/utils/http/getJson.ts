@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 import { ApiError } from '@/utils/http/ApiError';
 
+// validate responses at the edge
 export const getJson = async <TSchema extends z.ZodTypeAny>(
   input: RequestInfo | URL,
   schema: TSchema,

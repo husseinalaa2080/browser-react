@@ -6,6 +6,7 @@ import { formatPokemonNumber } from '@/features/pokemon/utils/formatPokemonNumbe
 import { formatPokemonWeight } from '@/features/pokemon/utils/formatPokemonWeight';
 import { getPokemonArtworkUrl } from '@/features/pokemon/utils/getPokemonArtworkUrl';
 
+// map API shapes for UI
 export const mapPokemonDetail = (response: PokemonDetailApiResponse): PokemonDetailModel => ({
   artworkUrl:
     response.sprites.other['official-artwork'].front_default ?? getPokemonArtworkUrl(response.id),
@@ -14,6 +15,7 @@ export const mapPokemonDetail = (response: PokemonDetailApiResponse): PokemonDet
   label: formatPokemonLabel(response.name),
   numberLabel: formatPokemonNumber(response.id),
   spriteUrl: response.sprites.front_default ?? getPokemonArtworkUrl(response.id),
+  // keep type order stable
   types: [...response.types].sort((left, right) => left.slot - right.slot).map(({ type }) => ({
     label: formatPokemonLabel(type.name),
     value: type.name,
